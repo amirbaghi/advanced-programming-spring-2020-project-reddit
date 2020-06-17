@@ -53,7 +53,7 @@ The User Interface for the project is totally up to you. Two main options that w
 <br /><br />
 Good luck on your future endeavors!<br />
 Gradery Team of AP Spring 2020, Shiraz University<br />
-Amir Mohammad Tavakolli<br />
+Amir Mohammad Tavakkoli<br />
 Mohammad Hossein Allahakbari<br />
 Amir Masoud Baghi<br />
 Aref Sayareh<br />
