@@ -50,7 +50,7 @@ A brief description of the content of such pages is as follows:
 The User Interface for the project is totally up to you. Two main options that we can think of are **Text User Interface (TUI, Terminal)** & **JavaFX**. The team suggests that you use JavaFX, due to its ease and the great tools that it provides you with to make a high-level UI for desktop and mobile apps, though its learning is *primarily up to you*.
 
 
-
+<br /><br />
 Good luck on your future endeavors!<br />
 Gradery Team of AP Spring 2020, Shiraz University<br />
 Amir Mohammad Tavakolli<br />
