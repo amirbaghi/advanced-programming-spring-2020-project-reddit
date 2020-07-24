@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #E9ECEF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label prefHeight="70.0" prefWidth="1208.0" style="-fx-background-color: #DEE2E6;" />
+      <ImageView fitHeight="54.0" fitWidth="45.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_reddit_social_media_logo_2470533.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="66.0" layoutY="25.0" prefHeight="21.0" prefWidth="59.0" text="Reddit">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchBox" layoutX="380.0" layoutY="18.0" prefHeight="35.0" prefWidth="440.0" promptText="Search" style="-fx-background-color: #F8F9FA;" />
+      <ImageView fx:id="search" fitHeight="60.0" fitWidth="38.0" layoutX="342.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_ic_search_48px_352091.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXButton fx:id="signupButton" layoutX="1096.0" layoutY="13.0" prefHeight="45.0" prefWidth="83.0" ripplerFill="WHITE" style="-fx-background-color: #212529;" text="SignUp" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="loginButton" layoutX="1003.0" layoutY="13.0" prefHeight="45.0" prefWidth="83.0" ripplerFill="BLACK" style="-fx-background-color: #ADB5BD;" text="Login">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXListView fx:id="postsList" layoutX="284.0" layoutY="135.0" prefHeight="751.0" prefWidth="633.0" style="-fx-background-color: #F8F9FA;" />
+      <JFXButton fx:id="logoutButton" layoutX="1045.0" layoutY="13.0" prefHeight="45.0" prefWidth="83.0" ripplerFill="BLACK" style="-fx-background-color: #ADB5BD;" text="Logout">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="profile" fitHeight="45.0" fitWidth="38.0" layoutX="1138.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/reddit.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXComboBox fx:id="sort" layoutX="284.0" layoutY="98.0" prefHeight="31.0" prefWidth="97.0" promptText="Sort by" />
+      <JFXButton fx:id="showPostButton" layoutX="390.0" layoutY="98.0" style="-fx-background-color: #7abbe0;" text="Show">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

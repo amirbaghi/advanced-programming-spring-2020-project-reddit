@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="usernameField" layoutX="158.0" layoutY="79.0" prefHeight="47.0" prefWidth="264.0" />
+      <Label layoutX="78.0" layoutY="92.0" text="Username">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="171.0" text="Password">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwordField" layoutX="158.0" layoutY="158.0" prefHeight="47.0" prefWidth="264.0" />
+      <Label fx:id="incorrectLabel" layoutX="158.0" layoutY="223.0" prefHeight="21.0" prefWidth="264.0" text="Label" textFill="#d72525" />
+      <JFXButton fx:id="loginButton" layoutX="224.0" layoutY="259.0" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #6b729d;" text="Login" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

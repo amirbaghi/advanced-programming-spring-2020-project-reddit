@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane fx:id="rootAnchorPane" prefHeight="120.0" prefWidth="552.0" style="-fx-background-color: #c3c5c5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="subRedditName" layoutX="108.0" prefHeight="41.0" prefWidth="386.0" text="subredditname">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Label>
+      <Circle fx:id="imageSubReddit" fill="#c9c9c9" layoutX="49.0" layoutY="51.0" radius="49.0" stroke="#c9c9c9" strokeType="INSIDE" />
+      <JFXButton fx:id="joinButton" layoutX="443.0" layoutY="56.0" prefHeight="31.0" prefWidth="82.0" style="-fx-background-color: #45cc9a;" text="join">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="leaveButton" layoutX="443.0" layoutY="56.0" prefHeight="31.0" prefWidth="82.0" style="-fx-background-color: #45cc9a;" text="leave" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="108.0" layoutY="61.0" text="member" textFill="#3243ff" />
+      <Label fx:id="memberNumber" layoutX="174.0" layoutY="61.0" text="Label" textFill="#422ae1" />
+      <Label layoutX="262.0" layoutY="61.0" text="Post" textFill="#dd28ce" />
+      <Label fx:id="postNumber" layoutX="301.0" layoutY="61.0" text="Label" textFill="#fc2ad2" />
+      <Label fx:id="joinError" layoutX="358.0" layoutY="90.0" prefHeight="21.0" prefWidth="180.0" textFill="RED" />
+   </children>
+</AnchorPane>

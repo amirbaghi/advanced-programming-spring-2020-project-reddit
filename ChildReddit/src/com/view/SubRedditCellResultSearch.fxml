@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+
+<AnchorPane fx:id="rootAnchorPane" prefHeight="258.0" prefWidth="283.0" style="-fx-background-color: #cce3ea;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="subRedditName" layoutX="112.0" layoutY="12.0" prefHeight="41.0" prefWidth="163.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Circle fx:id="imageSubReddit" fill="#c9c9c9" layoutX="59.0" layoutY="61.0" radius="49.0" stroke="#c9c9c9" strokeType="INSIDE" />
+      <JFXButton fx:id="joinButton" layoutX="133.0" layoutY="181.0" prefHeight="31.0" prefWidth="82.0" style="-fx-background-color: #45cc9a;" text="join">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="118.0" layoutY="71.0" text="member" textFill="#3243ff" />
+      <Label fx:id="memberNumber" layoutX="184.0" layoutY="71.0" text="Label" textFill="#422ae1" />
+      <Label layoutX="118.0" layoutY="100.0" text="Post" textFill="#dd28ce" />
+      <Label fx:id="postNumber" layoutX="184.0" layoutY="100.0" text="Label" textFill="#fc2ad2" />
+      <Label fx:id="joinError" layoutX="35.0" layoutY="212.0" prefHeight="21.0" prefWidth="180.0" textFill="RED" />
+      <Label layoutX="24.0" layoutY="129.0" text="Created" />
+      <Label fx:id="dateCreated" alignment="CENTER" layoutX="84.0" layoutY="129.0" prefHeight="21.0" prefWidth="172.0" text="date" textFill="#841ddd" />
+   </children>
+</AnchorPane>

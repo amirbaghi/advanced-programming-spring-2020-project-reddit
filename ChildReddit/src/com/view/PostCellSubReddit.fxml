@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootAnchorPane" prefHeight="249.0" prefWidth="580.0" style="-fx-background-color: #cce3ea;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Circle fx:id="imagePlaceUser" fill="#c2c6c9" layoutX="62.0" layoutY="63.0" radius="48.0" stroke="#c2c6c9" strokeType="INSIDE" />
+      <Label fx:id="username" layoutX="14.0" layoutY="126.0" prefHeight="21.0" prefWidth="121.0" text="Username" />
+      <Label fx:id="date" layoutX="140.0" layoutY="126.0" prefHeight="21.0" prefWidth="284.0" text="date" />
+      <JFXButton fx:id="deleteButton" layoutX="487.0" layoutY="121.0" prefHeight="31.0" prefWidth="68.0" style="-fx-background-color: #000000;" text="Delete" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="deleteIcon" fitHeight="21.0" fitWidth="58.0" layoutX="466.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/icons8-delete-bin-48.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXTextArea fx:id="titleArea" editable="false" focusColor="#cce3ea" layoutX="121.0" layoutY="15.0" prefHeight="95.0" prefWidth="441.0" style="-fx-background-color: #c4cfd3;" unFocusColor="#cce3ea">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Leelawadee UI Semilight" size="18.0" />
+         </font>
+      </JFXTextArea>
+      <Label layoutX="14.0" layoutY="178.0" text="Comments" textFill="#bf3333" />
+      <Label fx:id="commentNumberLabel" layoutX="99.0" layoutY="178.0" prefHeight="21.0" prefWidth="54.0" text="Label" textFill="#bf3333" />
+      <Label layoutX="247.0" layoutY="178.0" text="UpVote" textFill="#0817e4" />
+      <Label fx:id="upVoteLabel" layoutX="307.0" layoutY="178.0" text="Label" textFill="#0817e4" />
+      <Label layoutX="389.0" layoutY="178.0" text="DownVote" textFill="#0817e4" />
+      <Label fx:id="downVoteLabel" layoutX="470.0" layoutY="178.0" text="Label" textFill="#0817e4" />
+      <JFXButton fx:id="joinButton" layoutX="487.0" layoutY="121.0" prefHeight="31.0" prefWidth="68.0" style="-fx-background-color: #000000;" text="join" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
