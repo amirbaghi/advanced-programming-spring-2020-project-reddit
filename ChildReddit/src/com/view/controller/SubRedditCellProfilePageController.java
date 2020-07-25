@@ -116,7 +116,7 @@ public class SubRedditCellProfilePageController extends JFXListCell<SubReddit> {
     private void subRedditPage(SubReddit subReddit){
         subRedditName.getScene().getWindow().hide();
         OpenWindow.openWindow("../SubRedditPage.fxml", new SubRedditPageController(user, subReddit)
-                ,"Reddit - SubReddit " + subReddit.getName());
+                ,"ChildReddit - SubReddit " + subReddit.getName());
     }
 
     private void join(SubReddit subReddit){
