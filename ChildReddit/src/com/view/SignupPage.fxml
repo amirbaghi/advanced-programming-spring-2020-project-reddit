@@ -108,7 +108,7 @@
             <Font name="Arial Bold" size="28.0" />
          </font>
       </Label>
-      <JFXCheckBox fx:id="privacyBox" layoutX="255.0" layoutY="573.0" prefHeight="21.0" prefWidth="262.0" text="agree with our privacy and policy" />
+      <JFXCheckBox fx:id="privacyBox" layoutX="255.0" layoutY="573.0" prefHeight="21.0" prefWidth="130.0" text="agree with our" />
       <JFXButton fx:id="signupButton" layoutX="510.0" layoutY="561.0" prefHeight="45.0" prefWidth="182.0" ripplerFill="WHITE" style="-fx-background-color: #212529;" text="SingUp" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -119,5 +119,31 @@
       </JFXButton>
       <Label fx:id="privacyError" layoutX="255.0" layoutY="606.0" prefHeight="30.0" prefWidth="293.0" textFill="#d31717" />
       <Label fx:id="emailError" layoutX="493.0" layoutY="480.0" prefHeight="21.0" prefWidth="293.0" textFill="#d31717" />
+      <ImageView fx:id="showPassword" fitHeight="59.0" fitWidth="38.0" layoutX="950.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_Eye_4472995.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="hidePassword" fitHeight="59.0" fitWidth="38.0" layoutX="950.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_Hide_4473003.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <TextField fx:id="passwordShowField" layoutX="691.0" layoutY="304.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #F8F9FA;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label fx:id="privacy" layoutX="378.0" layoutY="573.0" prefHeight="21.0" prefWidth="130.0" text=" privacy and policy" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
    </children>
 </AnchorPane>
