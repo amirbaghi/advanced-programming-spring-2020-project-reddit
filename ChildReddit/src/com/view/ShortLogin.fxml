@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -28,5 +30,22 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <TextField fx:id="passwordShowField" layoutX="158.0" layoutY="158.0" prefHeight="47.0" prefWidth="264.0" />
+      <ImageView fx:id="showPassword" fitHeight="47.0" fitWidth="41.0" layoutX="425.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_Eye_4472995.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="hidePassword" fitHeight="47.0" fitWidth="41.0" layoutX="425.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_Hide_4473003.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>
