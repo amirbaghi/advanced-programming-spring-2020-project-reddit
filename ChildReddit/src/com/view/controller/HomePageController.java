@@ -9,6 +9,7 @@ import com.model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -47,6 +48,9 @@ public class HomePageController {
     @FXML
     private JFXButton showPostButton;
 
+    @FXML
+    private Label privacy;
+
     private ObservableList<Post> posts;
 
     @FXML
@@ -80,6 +84,8 @@ public class HomePageController {
 
         showPostButton.setOnAction(event -> show());
 
+        privacy.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> privacy());
+
     }
 
     private void show(){
@@ -90,35 +96,41 @@ public class HomePageController {
             posts.setAll(SubReddit.sortVote());
             postsList.refresh();
         }
+        postsList.setCellFactory(PostCellHomePageController -> new PostCellHomePageController(user));
     }
 
     private void signup(){
         signupButton.getScene().getWindow().hide();
-        OpenWindow.openWindow("../SignupPage.fxml",new SignupPageController(), "Reddit - Signup Page");
+        OpenWindow.openWindow("../SignupPage.fxml",new SignupPageController(), "ChildReddit - Signup Page");
 
     }
 
     private void login(){
         loginButton.getScene().getWindow().hide();
 
-        OpenWindow.openWindow("../LoginPage.fxml",new LoginPageController(), "Reddit - Login Page");
+        OpenWindow.openWindow("../LoginPage.fxml",new LoginPageController(), "ChildReddit - Login Page");
     }
 
     private void logout(){
         logoutButton.getScene().getWindow().hide();
-        OpenWindow.openWindow("../HomePage.fxml",new HomePageController(null), "Reddit - HomePage");
+        OpenWindow.openWindow("../HomePage.fxml",new HomePageController(null), "ChildReddit - HomePage");
     }
 
     private void profile(){
         profile.getScene().getWindow().hide();
         OpenWindow.openWindow("../ProfilePage.fxml", new ProfilePageController(user, user),
-                "Reddit - Profile Page " + user.getUserName());
+                "ChildReddit - Profile Page " + user.getUserName());
     }
 
     private void search(){
         String s = searchBox.getText().trim();
         searchBox.getScene().getWindow().hide();
         OpenWindow.openWindow("../ResultSearchPage.fxml", new ResultSearchPageController(user, s),
-                "Reddit - Search '" + s + "'");
+                "ChildReddit - Search '" + s + "'");
+    }
+
+    private void privacy(){
+        privacy.getScene().getWindow();
+        OpenWindow.openWindowWait("../PrivacyAndPolicy.fxml", new PrivacyAndPolicyController(), "ChildReddit - Privacy And Policy");
     }
 }
