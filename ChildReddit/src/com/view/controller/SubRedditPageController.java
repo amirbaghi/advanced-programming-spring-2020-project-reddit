@@ -188,29 +188,29 @@ public class SubRedditPageController {
         String s = searchBox.getText().trim();
         searchIcon.getScene().getWindow().hide();
         OpenWindow.openWindow("../ResultSearchPage.fxml", new ResultSearchPageController(user, s),
-                "Reddit - Search '" + s + "'");
+                "ChildReddit - Search '" + s + "'");
     }
 
     private void profilePage(){
         profile.getScene().getWindow().hide();
         OpenWindow.openWindow("../ProfilePage.fxml", new ProfilePageController(user,user),
-                "Reddit - Profile Page " + user.getUserName());
+                "ChildReddit - Profile Page " + user.getUserName());
     }
 
     private void homePage(){
         redditLabel.getScene().getWindow().hide();
-        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(user), "Reddit - HomePage");
+        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(user), "ChildReddit - HomePage");
     }
 
     private void logout(){
         logoutButton.getScene().getWindow().hide();
 
-        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(null), "Reddit - HomePge");
+        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(null), "ChildReddit - HomePge");
     }
 
     private void showImage(){
         imagePlace.getScene().getWindow();
-        OpenWindow.openWindowWait("../ShowImage.fxml", new ShowImageController(subReddit.getImagePath()),"Reddit - Image " + subReddit.getName());
+        OpenWindow.openWindowWait("../ShowImage.fxml", new ShowImageController(subReddit.getImagePath()),"ChildReddit - Image " + subReddit.getName());
     }
 
     private void imageChange(){
@@ -226,7 +226,7 @@ public class SubRedditPageController {
 
     private void about(){
         imagePlace.getScene().getWindow();
-        OpenWindow.openWindowWait("../SetInfo.fxml",new SetInfoController(subReddit),"Reddit - Set info");
+        OpenWindow.openWindowWait("../SetInfo.fxml",new SetInfoController(subReddit),"ChildReddit - Set info");
         aboutArea.setText(subReddit.getDescription());
     }
 
@@ -246,7 +246,7 @@ public class SubRedditPageController {
     private void login(){
         loginButton.getScene().getWindow();
         ShortLoginController shortLoginController = new ShortLoginController(user);
-        OpenWindow.openWindowWait("../ShortLogin.fxml", shortLoginController, "Reddit - Login");
+        OpenWindow.openWindowWait("../ShortLogin.fxml", shortLoginController, "ChildReddit - Login");
         user = shortLoginController.getUser();
         if(subReddit.getUsers().contains(user)){
             membersList.setCellFactory(UserCellController -> new UserCellController(user, subReddit));
@@ -270,7 +270,7 @@ public class SubRedditPageController {
 
     private void signup(){
         signupButton.getScene().getWindow().hide();
-        OpenWindow.openWindow("../SignupPage.fxml", new SignupPageController(), "Reddit - Signup Page");
+        OpenWindow.openWindow("../SignupPage.fxml", new SignupPageController(), "ChildReddit - Signup Page");
     }
 
     private void join(){
