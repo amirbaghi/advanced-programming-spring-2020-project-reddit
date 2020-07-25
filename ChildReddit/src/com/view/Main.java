@@ -1,7 +1,5 @@
 package com.view;
 
-import com.exception.UserExistException;
-import com.model.Gender;
 import com.model.SubReddit;
 import com.model.User;
 import com.view.controller.HomePageController;
@@ -15,21 +13,18 @@ import java.util.ArrayList;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
-        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(null), "Reddit - HomePage");
+    public void start(Stage primaryStage){
+        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(null), "ChildReddit - HomePage");
     }
 
 
-    public static void main(String[] args) throws UserExistException {
-        //User user1 = User.signUp("Mohammad","123456",Gender.Male);
+    public static void main(String[] args){
 
         try {
             FileInputStream fisUser = new FileInputStream("UserData.txt");
             ObjectInputStream oisUser = new ObjectInputStream(fisUser);
             User.setUsers((ArrayList<User>)oisUser.readObject());
             oisUser.close();
-            //User.getUsers().get(0).createSubReddit("Hello");
-            //User.getUsers().get(0).setAge(21);
             for(User user: User.getUsers()){
                 for(SubReddit subReddit: user.getSubReddits()){
                     if(!SubReddit.getSubRedditCreated().contains(subReddit)){
