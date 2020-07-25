@@ -73,6 +73,6 @@ public class UserCellResultSearchController extends JFXListCell<User> {
     private void profilePage(User owner){
         username.getScene().getWindow().hide();
         OpenWindow.openWindow("../ProfilePage.fxml", new ProfilePageController(owner, user),
-                "Reddit - Profile Page " + owner.getUserName());
+                "ChildReddit - Profile Page " + owner.getUserName());
     }
 }
