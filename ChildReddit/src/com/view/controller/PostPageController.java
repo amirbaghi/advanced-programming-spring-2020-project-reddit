@@ -92,6 +92,9 @@ public class PostPageController {
     private JFXButton joinButton;
 
     @FXML
+    private JFXButton leaveButton;
+
+    @FXML
     private Label loginSignupLabel;
 
     @FXML
@@ -145,9 +148,12 @@ public class PostPageController {
         }
         if(post.getSubReddit().getUsers().contains(user)){
             joinButton.setVisible(false);
+        }else{
+            leaveButton.setVisible(false);
         }
 
         if(user==null){
+            leaveButton.setVisible(false);
             logoutButton.setVisible(false);
             profile.setVisible(false);
             writeCommentButton.setVisible(false);
@@ -213,23 +219,25 @@ public class PostPageController {
         writeCommentIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> writeComment());
         writeCommentButton.setOnAction(event -> writeComment());
 
+        leaveButton.setOnAction(event -> leave());
+
     }
 
     private void search(){
         String s = searchBox.getText().trim();
         searchIcon.getScene().getWindow().hide();
         OpenWindow.openWindow("../ResultSearchPage.fxml", new ResultSearchPageController(user,s),
-        "Reddit - Search '" + s + "'");
+        "ChildReddit - Search '" + s + "'");
     }
 
     private void homePage(){
         redditIcon.getScene().getWindow().hide();
-        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(user), "Reddit - HomePage");
+        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(user), "ChildReddit - HomePage");
     }
 
     private void logout(){
         logoutButton.getScene().getWindow().hide();
-        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(null), "Reddit - HomePage");
+        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(null), "ChildReddit - HomePage");
     }
 
 
@@ -238,12 +246,12 @@ public class PostPageController {
         AttachType attachType = post.getAttach().getAttachType();
         String path = post.getAttach().getPath();
         if(attachType.equals(AttachType.IMAGE)){
-            OpenWindow.openWindowWait("../ShowImage.fxml", new ShowImageController(path), "Reddit - Attach File Show Image");
+            OpenWindow.openWindowWait("../ShowImage.fxml", new ShowImageController(path), "ChildReddit - Attach File Show Image");
         }
         else {
             String newPath = path.replace("\\", "/");
             newPath = newPath.replace("file:","file:///");
-            OpenWindow.openWindowWait("../MediaPlayer.fxml", new MediaPlayerController(newPath), "Reddit - Attach File Media View");
+            OpenWindow.openWindowWait("../MediaPlayer.fxml", new MediaPlayerController(newPath), "ChildReddit - Attach File Media View");
         }
     }
 
@@ -266,18 +274,19 @@ public class PostPageController {
     private void subRedditPage(){
         subRedditName.getScene().getWindow().hide();
         OpenWindow.openWindow("../SubRedditPage.fxml", new SubRedditPageController(user, post.getSubReddit())
-        ,"Reddit - SubReddit " + post.getSubReddit().getName());
+        ,"ChildReddit - SubReddit " + post.getSubReddit().getName());
     }
 
     private void login(){
         loginButton.getScene().getWindow();
         ShortLoginController shortLoginController = new ShortLoginController(user);
-        OpenWindow.openWindowWait("../ShortLogin.fxml", shortLoginController, "Reddit - Login");
+        OpenWindow.openWindowWait("../ShortLogin.fxml", shortLoginController, "ChildReddit - Login");
         user = shortLoginController.getUser();
 
         if(post.getSubReddit().getUsers().contains(user)){
             commentList.setCellFactory(CommentCellController -> new CommentCellController(user, post));
             joinButton.setVisible(false);
+            leaveButton.setVisible(true);
             voteError.setText("");
             joinError.setText("");
         }
@@ -306,6 +315,7 @@ public class PostPageController {
                 user.memberSubReddit(post.getSubReddit());
                 numberMembersLabel.setText(post.getSubReddit().members());
                 joinButton.setVisible(false);
+                leaveButton.setVisible(true);
             } catch (BeingMember beingMember) {
                 beingMember.printStackTrace();
             } catch (NotExistSubRedditException e) {
@@ -316,26 +326,35 @@ public class PostPageController {
 
     private void signup(){
         signupButton.getScene().getWindow().hide();
-        OpenWindow.openWindow("../SignupPage.fxml", new SignupPageController(), "Reddit - Signup Page");
+        OpenWindow.openWindow("../SignupPage.fxml", new SignupPageController(), "ChildReddit - Signup Page");
     }
 
     private void userPage(){
         username.getScene().getWindow().hide();
         OpenWindow.openWindow("../ProfilePage.fxml", new ProfilePageController(post.getUser(), user),
-                "Reddit - Profile Page " + post.getUser().getUserName());
+                "ChildReddit - Profile Page " + post.getUser().getUserName());
     }
 
     private void profilePage(){
         profile.getScene().getWindow().hide();
         OpenWindow.openWindow("../ProfilePage.fxml", new ProfilePageController(user,user),
-                "Reddit - Profile Page " + user.getUserName());
+                "ChildReddit - Profile Page " + user.getUserName());
     }
 
     private void writeComment(){
+        int len = post.getComments().size() + 1;
         writeCommentButton.getScene().getWindow();
-        OpenWindow.openWindowWait("../WriteComment.fxml", new WriteCommentController(user, post), "Reddit - Write comment");
-        comments.add(0, post.getComments().get(0));
-        commentList.refresh();
+        OpenWindow.openWindowWait("../WriteComment.fxml", new WriteCommentController(user, post), "ChildReddit - Write comment");
+        if(len == post.getComments().size()) {
+            comments.add(0, post.getComments().get(0));
+            commentList.refresh();
+        }
+    }
+
+    private void leave(){
+        user.leaveSubReddit(post.getSubReddit());
+        leaveButton.setVisible(false);
+        joinButton.setVisible(true);
     }
 
 }
