@@ -24,9 +24,6 @@ public class UserCellController extends JFXListCell<User> {
         this.subReddit = subReddit;
     }
 
-   // public void setUser(User user){
-   //     this.user = user;
-   // }
 
     @FXML
     private AnchorPane rootAnchorPane;
@@ -81,8 +78,8 @@ public class UserCellController extends JFXListCell<User> {
             usernameLabel.setText(user.getUserName());
 
             numberPost.setText(String.valueOf(user.numberPostInSubReddit(subReddit)));
-            upVoteNumber.setText(String.valueOf(user.averageUpVotePost(subReddit))+"%");
-            downVoteNumber.setText(String.valueOf(user.averageDownVotePost(subReddit))+"%");
+            upVoteNumber.setText(user.averageUpVotePost(subReddit)+"%");
+            downVoteNumber.setText(user.averageDownVotePost(subReddit)+"%");
 
             usernameLabel.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> profilePage(user));
 
@@ -94,7 +91,7 @@ public class UserCellController extends JFXListCell<User> {
     private void profilePage(User owner){
         usernameLabel.getScene().getWindow().hide();
         OpenWindow.openWindow("../ProfilePage.fxml", new ProfilePageController(owner, this.user),
-                "Reddit - Profile Page " + owner.getUserName());
+                "ChildReddit - Profile Page " + owner.getUserName());
     }
 
 }
