@@ -148,6 +148,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <JFXButton fx:id="leaveButton" layoutX="932.0" layoutY="390.0" prefHeight="31.0" prefWidth="237.0" style="-fx-background-color: #cad08d;" text="leave">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
          </children></AnchorPane>
   </content>
 </ScrollPane>
