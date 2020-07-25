@@ -100,7 +100,7 @@ public class SubRedditCellResultSearchController extends JFXListCell<SubReddit> 
     private void subRedditPage(SubReddit subReddit){
         subRedditName.getScene().getWindow().hide();
         OpenWindow.openWindow("../SubRedditPage.fxml", new SubRedditPageController(user, subReddit),
-                "Rddit - SubReddit Page " + subReddit.getName());
+                "ChildReddit - SubReddit Page " + subReddit.getName());
     }
 
     private void join(SubReddit subReddit){
@@ -112,7 +112,7 @@ public class SubRedditCellResultSearchController extends JFXListCell<SubReddit> 
                 user.memberSubReddit(subReddit);
                 joinButton.getScene().getWindow().hide();
                 OpenWindow.openWindow("../SubRedditPage.fxml",new SignupPageController(),
-                        "Reddit - SubReddit Page " + subReddit.getName());
+                        "ChildReddit - SubReddit Page " + subReddit.getName());
             } catch (BeingMember beingMember) {
                 beingMember.printStackTrace();
             } catch (NotExistSubRedditException e) {
