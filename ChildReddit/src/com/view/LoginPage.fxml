@@ -83,5 +83,26 @@
          </cursor>
       </JFXButton>
       <Label fx:id="incorrectLabel" layoutX="380.0" layoutY="450.0" prefHeight="30.0" prefWidth="404.0" textFill="#d31717" />
+      <TextField fx:id="passwordShowField" layoutX="380.0" layoutY="402.0" prefHeight="35.0" prefWidth="404.0" style="-fx-background-color: #F8F9FA;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <ImageView fx:id="showPassword" fitHeight="70.0" fitWidth="38.0" layoutX="788.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_Eye_4472995.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="hidePassword" fitHeight="70.0" fitWidth="38.0" layoutX="788.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_Hide_4473003.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>
