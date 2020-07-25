@@ -47,7 +47,7 @@ public class Validation {
         if(strAge!=null && strAge.length()!=0) {
             try {
                 age = Integer.parseInt(strAge);
-                if(age<=0){
+                if(age<=0 || strAge.contains("+")){
                     return 0;
                 }
                 if(age>0 && age<10){
