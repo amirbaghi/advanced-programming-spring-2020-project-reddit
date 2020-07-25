@@ -101,6 +101,8 @@ public class PostCellHomePageController extends JFXListCell<Post> {
 
             titleArea.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {postPage(post);});
 
+            username.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> userPage(post));
+
             setText(null);
             setGraphic(rootAnchorPane);
         }
@@ -109,7 +111,7 @@ public class PostCellHomePageController extends JFXListCell<Post> {
     private void postPage(Post post){
         titleArea.getScene().getWindow().hide();
         OpenWindow.openWindow("../PostPage.fxml",new PostPageController(post, user),
-                "Reddit - Post Page " + post.getTitle());
+                "ChildReddit - Post Page " + post.getTitle());
     }
 
 
@@ -123,7 +125,7 @@ public class PostCellHomePageController extends JFXListCell<Post> {
                 user.memberSubReddit(post.getSubReddit());
                 joinButton.getScene().getWindow().hide();
                 OpenWindow.openWindowWait("../SubRedditPage.fxml",new SubRedditPageController(user, post.getSubReddit()),
-                        "Reddit - SubReddit Page " + post.getSubReddit().getName());
+                        "ChildReddit - SubReddit Page " + post.getSubReddit().getName());
             } catch (BeingMember beingMember) {
                 beingMember.printStackTrace();
             } catch (NotExistSubRedditException e) {
@@ -132,5 +134,10 @@ public class PostCellHomePageController extends JFXListCell<Post> {
         }
     }
 
+    private void userPage(Post post){
+        username.getScene().getWindow().hide();
+        OpenWindow.openWindow("../ProfilePage.fxml", new ProfilePageController(post.getUser(), user),
+                "ChildReddit - Profile Page " + post.getUser().getUserName());
+    }
 
 }
