@@ -40,6 +40,15 @@ public class SignupPageController {
     private PasswordField passwordBox;
 
     @FXML
+    private ImageView showPassword;
+
+    @FXML
+    private ImageView hidePassword;
+
+    @FXML
+    private TextField passwordShowField;
+
+    @FXML
     private JFXComboBox<Gender> genderBox;
 
     @FXML
@@ -73,9 +82,18 @@ public class SignupPageController {
     private JFXButton signupButton;
 
     @FXML
+    private Label privacy;
+
+    @FXML
     public void initialize(){
+        passwordShowField.setVisible(false);
+        showPassword.setVisible(false);
         ObservableList<Gender> genders = FXCollections.observableArrayList(Gender.values());
         genderBox.setItems(genders);
+
+        hidePassword.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> showPassword());
+
+        showPassword.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> hidePassword());
 
         signupButton.setOnAction(event -> { signUp(); });
 
@@ -85,6 +103,8 @@ public class SignupPageController {
         redditLabel.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {homePage();});
 
         search.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> search());
+
+        privacy.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> privacy());
     }
 
     private void search(){
@@ -92,6 +112,21 @@ public class SignupPageController {
         search.getScene().getWindow().hide();
         OpenWindow.openWindow("../ResultSearchPage.fxml", new ResultSearchPageController(null, s),
                 "Reddit - Search '" + s + "'");
+    }
+
+    private void showPassword(){
+        hidePassword.setVisible(false);
+        passwordShowField.setText(passwordBox.getText());
+        passwordShowField.setVisible(true);
+        showPassword.setVisible(true);
+    }
+
+    private void hidePassword(){
+        showPassword.setVisible(false);
+        hidePassword.setVisible(true);
+        passwordBox.setText(passwordShowField.getText());
+        passwordBox.setVisible(true);
+        passwordShowField.setVisible(false);
     }
 
     private void signUp(){
@@ -104,7 +139,13 @@ public class SignupPageController {
         privacyError.setText("");
 
         String username = usernameBox.getText().replaceFirst("\\s++$", "");
-        String password = passwordBox.getText().replaceFirst("\\s++$", "");
+        String password;
+        if(hidePassword.isVisible()){
+            password = passwordBox.getText().replaceFirst("\\s++$", "");
+        }
+        else{
+            password = passwordShowField.getText().replaceFirst("\\s++$", "");
+        }
         Gender gender = genderBox.getSelectionModel().getSelectedItem();
         String email = emailBox.getText().trim();
         String strAge = ageBox.getText().trim();
@@ -171,18 +212,23 @@ public class SignupPageController {
 
     private void profilePage(User user){
         signupButton.getScene().getWindow().hide();
-        OpenWindow.openWindow("../ProfilePage.fxml",new ProfilePageController(user, user), "Reddit - Profile Page " + user.getUserName());
+        OpenWindow.openWindow("../ProfilePage.fxml",new ProfilePageController(user, user), "ChildReddit - Profile Page " + user.getUserName());
     }
 
     private void login(){
         loginButton.getScene().getWindow().hide();
-        OpenWindow.openWindow("../LoginPage.fxml",new LoginPageController(), "Reddit - Login Page");
+        OpenWindow.openWindow("../LoginPage.fxml",new LoginPageController(), "ChildReddit - Login Page");
     }
 
     private void homePage(){
         loginButton.getScene().getWindow().hide();
 
-        OpenWindow.openWindow("../HomePage.fxml",new HomePageController(null), "Reddit - HomePage");
+        OpenWindow.openWindow("../HomePage.fxml",new HomePageController(null), "ChildReddit - HomePage");
+    }
+
+    private void privacy(){
+        privacy.getScene().getWindow();
+        OpenWindow.openWindowWait("../PrivacyAndPolicy.fxml", new PrivacyAndPolicyController(), "ChildReddit - Privacy And Policy");
     }
 
 }
