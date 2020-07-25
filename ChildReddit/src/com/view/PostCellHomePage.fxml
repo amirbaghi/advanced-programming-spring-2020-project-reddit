@@ -8,11 +8,13 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="rootAnchorPane" prefHeight="249.0" prefWidth="580.0" style="-fx-background-color: #cce3ea;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Circle fx:id="imagePlaceUser" fill="#c2c6c9" layoutX="62.0" layoutY="62.0" radius="48.0" stroke="#c2c6c9" strokeType="INSIDE" />
-      <Label fx:id="username" alignment="CENTER" layoutX="2.0" layoutY="125.0" prefHeight="21.0" prefWidth="121.0" text="Username" />
+      <Label fx:id="username" alignment="CENTER" layoutX="2.0" layoutY="125.0" prefHeight="21.0" prefWidth="121.0" text="Username">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Label>
       <Label fx:id="date" layoutX="140.0" layoutY="125.0" prefHeight="21.0" prefWidth="284.0" text="date" />
       <JFXTextArea fx:id="titleArea" editable="false" focusColor="#cce3ea" layoutX="121.0" layoutY="14.0" prefHeight="95.0" prefWidth="441.0" style="-fx-background-color: #c4cfd3;" unFocusColor="#cce3ea">
          <cursor>
