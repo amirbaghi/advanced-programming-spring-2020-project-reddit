@@ -110,6 +110,8 @@ public class PostCellSubRedditController extends JFXListCell<Post> {
 
             titleArea.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {postPage(post);});
 
+            username.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> userPage(post));
+
             setText(null);
             setGraphic(rootAnchorPane);
         }
@@ -118,33 +120,39 @@ public class PostCellSubRedditController extends JFXListCell<Post> {
     private void postPage(Post post){
         titleArea.getScene().getWindow().hide();
         OpenWindow.openWindow("../PostPage.fxml",new PostPageController(post, user),
-                "Reddit - Post Page " + post.getTitle());
+                "ChildReddit - Post Page " + post.getTitle());
     }
 
     private void deletePost(Post post){
         deleteIcon.getScene().getWindow();
         OpenWindow.openWindowWait("../DeletePostWarning.fxml",new DeletePostWarningController(post, getListView()),
-                "Reddit - Delete Warning");
+                "ChildReddit - Delete Warning");
     }
 
     private void join(Post post){
         if(user == null){
             joinButton.getScene().getWindow().hide();
 
-            OpenWindow.openWindow("../SignupPage.fxml",new SignupPageController(), "Reddit - Signup Page");
+            OpenWindow.openWindow("../SignupPage.fxml",new SignupPageController(), "ChildReddit - Signup Page");
         }
         else{
             try {
                 user.memberSubReddit(post.getSubReddit());
                 joinButton.getScene().getWindow().hide();
                 OpenWindow.openWindowWait("../SubRedditPage.fxml",new SubRedditPageController(user, post.getSubReddit()),
-                        "Reddit - SubReddit Page " + post.getSubReddit().getName());
+                        "ChildReddit - SubReddit Page " + post.getSubReddit().getName());
             } catch (BeingMember beingMember) {
                 beingMember.printStackTrace();
             } catch (NotExistSubRedditException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void userPage(Post post){
+        username.getScene().getWindow().hide();
+        OpenWindow.openWindow("../ProfilePage.fxml", new ProfilePageController(post.getUser(), user),
+                "ChildReddit - Profile Page " + post.getUser().getUserName());
     }
 
 }
