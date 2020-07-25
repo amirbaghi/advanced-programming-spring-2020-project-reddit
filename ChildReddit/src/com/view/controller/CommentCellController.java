@@ -1,7 +1,10 @@
 package com.view.controller;
 
 import com.exception.VoteException;
-import com.jfoenix.controls.*;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListCell;
+import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXTextArea;
 import com.model.Comment;
 import com.model.Post;
 import com.model.User;
@@ -123,14 +126,17 @@ public class CommentCellController extends JFXListCell<Comment> {
         }
     }
     private void reply(Comment comment){
+        int len = comment.getComments().size() + 1;
         error.setText("");
         if(user == null){
             error.setText("Please first login or signup");
         }else {
             replyButton.getScene().getWindow();
-            OpenWindow.openWindowWait("../WriteComment.fxml", new WriteCommentController(user, comment), "Reddit - Write Comment");
-            replyComments.add(0, comment.getComments().get(0));
-            replyCommentList.refresh();
+            OpenWindow.openWindowWait("../WriteComment.fxml", new WriteCommentController(user, comment), "ChildReddit - Write Comment");
+            if(len == comment.getComments().size()) {
+                replyComments.add(0, comment.getComments().get(0));
+                replyCommentList.refresh();
+            }
         }
     }
 
