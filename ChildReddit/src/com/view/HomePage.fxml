@@ -58,10 +58,15 @@
          </cursor>
       </ImageView>
       <JFXComboBox fx:id="sort" layoutX="284.0" layoutY="98.0" prefHeight="31.0" prefWidth="97.0" promptText="Sort by" />
-      <JFXButton fx:id="showPostButton" layoutX="390.0" layoutY="98.0" style="-fx-background-color: #7abbe0;" text="Show">
+      <JFXButton fx:id="showPostButton" layoutX="390.0" layoutY="98.0" prefHeight="31.0" prefWidth="59.0" style="-fx-background-color: #7abbe0;" text="sort">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <Label fx:id="privacy" layoutX="22.0" layoutY="865.0" text="privacy and policy" textFill="#2b00ff">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
    </children>
 </AnchorPane>
