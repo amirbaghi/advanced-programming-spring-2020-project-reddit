@@ -202,33 +202,34 @@ public class ProfilePageController {
         String s = searchBox.getText().trim();
         searchIcon.getScene().getWindow().hide();
         OpenWindow.openWindow("../ResultSearchPage.fxml", new ResultSearchPageController(user, s),
-                "Reddit - Search '" + s + "s");
+                "ChildReddit - Search '" + s + "s");
     }
 
     private void profilePage(){
         profile.getScene().getWindow().hide();
         OpenWindow.openWindow("../ProfilePage.fxml", new ProfilePageController(user, user),
-                "Reddit - Profile Page " + user.getUserName());
+                "ChildReddit - Profile Page " + user.getUserName());
     }
 
     private void signup(){
         signupButton.getScene().getWindow().hide();
-        OpenWindow.openWindow("../SignupPage.fxml", new SignupPageController(), "Reddit - Signup Page");
+        OpenWindow.openWindow("../SignupPage.fxml", new SignupPageController(), "ChildReddit - Signup Page");
     }
 
     private void login(){
         loginButton.getScene().getWindow().hide();
-        OpenWindow.openWindow("../LoginPage.fxml", new LoginPageController(), "Reddit - Login Page");
+        OpenWindow.openWindow("../LoginPage.fxml", new LoginPageController(), "ChildReddit - Login Page");
     }
 
     private void logout(){
         imagePlace.getScene().getWindow().hide();
-        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(null),"Reddit - HomePage");
+        OpenWindow.openWindow("../HomePage.fxml", new HomePageController(null),"ChildReddit - HomePage");
     }
 
     private void showImage(){
         imagePlace.getScene().getWindow();
-        OpenWindow.openWindowWait("../ShowImage.fxml", new ShowImageController(owner.getPathImage()), "Reddit - Image ");
+        OpenWindow.openWindowWait("../ShowImage.fxml", new ShowImageController(owner.getPathImage()),
+                "ChildReddit - Image " + owner.getUserName());
     }
 
     private void imageChange(){
@@ -244,30 +245,31 @@ public class ProfilePageController {
 
     private void info(){
         imagePlace.getScene().getWindow();
-        OpenWindow.openWindowWait("../SetInfo.fxml", new SetInfoController(owner),"Reddit - Set Info");
+        OpenWindow.openWindowWait("../SetInfo.fxml", new SetInfoController(owner),"ChildReddit - Set Info");
         infoBox.setText(owner.getInfo());
     }
 
     private void emailEdit(){
         imagePlace.getScene().getWindow();
-        OpenWindow.openWindowWait("../EditEmail.fxml", new EditEmailController(owner),"Reddit - Edit Email");
+        OpenWindow.openWindowWait("../EditEmail.fxml", new EditEmailController(owner),"ChildReddit - Edit Email");
         email.setText(owner.getEmail());
     }
 
     private void ageEdit(){
         imagePlace.getScene().getWindow();
-        OpenWindow.openWindowWait("../EditAge.fxml", new EditAgeController(owner),"Reddit - Edit Age");
+        OpenWindow.openWindowWait("../EditAge.fxml", new EditAgeController(owner),"ChildReddit - Edit Age");
         age.setText(owner.getAge());
     }
 
     private void changePassword(){
-        OpenWindow.openWindowWait("../ChangePassword.fxml", new ChangePasswordController(owner),"Reddit - Change Password");
+        passwordIcon.getScene().getWindow();
+        OpenWindow.openWindowWait("../ChangePassword.fxml", new ChangePasswordController(owner),"ChildReddit - Change Password");
     }
 
     private void subRedditCreate(){
         int len = owner.getSubReddits().size() + 1;
         imagePlace.getScene().getWindow();
-        OpenWindow.openWindowWait("../CreateSubReddit.fxml", new CreateSubRedditController(owner),"Reddit - Create SubReddit");
+        OpenWindow.openWindowWait("../CreateSubReddit.fxml", new CreateSubRedditController(owner),"ChildReddit - Create SubReddit");
         if(len == owner.getSubReddits().size()) {
             subReddits.add(0,owner.getSubReddits().get(0));
             subRedditList.setItems(subReddits);
@@ -276,6 +278,6 @@ public class ProfilePageController {
 
     private void homePage(){
         redditLabel.getScene().getWindow().hide();
-        OpenWindow.openWindow("../HomePage.fxml",new HomePageController(user), "Reddit - HomePage");
+        OpenWindow.openWindow("../HomePage.fxml",new HomePageController(user), "ChildReddit - HomePage");
     }
 }
