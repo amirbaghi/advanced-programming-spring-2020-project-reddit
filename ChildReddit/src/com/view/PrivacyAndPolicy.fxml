@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="113.0" prefWidth="346.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="52.0" layoutY="27.0" prefHeight="59.0" prefWidth="243.0" text="Be Human">
+         <font>
+            <Font name="Leelawadee UI Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
