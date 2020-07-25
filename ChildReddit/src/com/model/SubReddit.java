@@ -3,7 +3,6 @@ package com.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 
 public class SubReddit implements Serializable {
