@@ -123,15 +123,9 @@ public class Post implements Serializable {
     public static ArrayList<Post> search(String s){
         String s1 = s.toLowerCase();
         ArrayList<Post> postFind = new ArrayList<>();
-        for(User user: User.getUsers()){
-            for(SubReddit subReddit: user.getSubReddits()){
-                for(Post post: subReddit.getPosts()){
-                    if(user.equals(post.getUser())){
-                        if(post.getTitle().toLowerCase().contains(s1) || post.getText().toLowerCase().contains(s1)){
-                            postFind.add(post);
-                        }
-                    }
-                }
+        for(Post post: SubReddit.allPostInSubReddit()){
+            if(post.getTitle().toLowerCase().contains(s1) || post.getText().toLowerCase().contains(s1)){
+                postFind.add(post);
             }
         }
         return postFind;
