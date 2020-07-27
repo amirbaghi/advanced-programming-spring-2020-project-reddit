@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="152.0" prefWidth="600.0" style="-fx-background-color: #E9ECEF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="ageField" layoutX="91.0" layoutY="32.0" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #F8F9FA;" />
+      <Label layoutX="62.0" layoutY="37.0" text="Age" />
+      <JFXButton fx:id="notSaveButton" layoutX="459.0" layoutY="88.0" prefHeight="38.0" prefWidth="95.0" style="-fx-background-color: #ADB5BD;" text="Don't Save">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label fx:id="ageError" layoutX="91.0" layoutY="67.0" prefHeight="21.0" prefWidth="327.0" textFill="#e11717" />
+      <JFXButton fx:id="saveButton" layoutX="459.0" layoutY="29.0" prefHeight="38.0" prefWidth="95.0" style="-fx-background-color: #000000;" text="Save" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

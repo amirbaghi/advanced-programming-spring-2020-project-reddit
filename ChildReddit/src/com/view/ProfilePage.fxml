@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #E9ECEF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Circle fx:id="imagePlace" fill="#c9c9c9" layoutX="112.0" layoutY="167.0" radius="75.0" stroke="#c9c9c9" strokeType="INSIDE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Circle>
+      <Label prefHeight="70.0" prefWidth="1200.0" style="-fx-background-color: #DEE2E6;" />
+      <Label fx:id="redditLabel" layoutX="59.0" layoutY="25.0" prefHeight="21.0" prefWidth="59.0" text="  Reddit">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <ImageView fx:id="redditIcon" fitHeight="54.0" fitWidth="45.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_reddit_social_media_logo_2470533.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="searchIcon" fitHeight="60.0" fitWidth="38.0" layoutX="342.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_ic_search_48px_352091.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <TextField fx:id="searchBox" layoutX="380.0" layoutY="18.0" prefHeight="35.0" prefWidth="440.0" promptText="Search" style="-fx-background-color: #F8F9FA;" />
+      <Label fx:id="username" layoutX="210.0" layoutY="92.0" prefHeight="35.0" prefWidth="109.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="210.0" layoutY="190.0" prefHeight="35.0" prefWidth="49.0" text="Email :" />
+      <Label layoutX="208.0" layoutY="248.0" prefHeight="35.0" prefWidth="38.0" text="Age : " />
+      <Label fx:id="age" alignment="CENTER" layoutX="265.0" layoutY="248.0" prefHeight="35.0" prefWidth="59.0" style="-fx-background-color: #F8F9FA;" />
+      <Label layoutX="42.0" layoutY="337.0" prefHeight="21.0" prefWidth="45.0" text=" Info : ">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Label>
+      <ImageView fitHeight="28.0" fitWidth="35.0" layoutX="14.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/icons8-info-50.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="passwordIcon" fitHeight="28.0" fitWidth="80.0" layoutX="14.0" layoutY="823.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/password.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="passwordLabel" layoutX="42.0" layoutY="827.0" prefHeight="21.0" prefWidth="126.0" text="  change password">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <JFXListView fx:id="subRedditList" layoutX="591.0" layoutY="148.0" prefHeight="736.0" prefWidth="590.0" style="-fx-background-color: #F8F9FA;" />
+      <Label layoutX="588.0" layoutY="118.0" prefHeight="21.0" prefWidth="118.0" text="SubReddit" />
+      <JFXButton fx:id="changeImage" layoutX="55.0" layoutY="250.0" text="change Image">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="210.0" layoutY="148.0" text="Gnder :" />
+      <Label fx:id="genderLabel" layoutX="265.0" layoutY="140.0" prefHeight="38.0" prefWidth="65.0" />
+      <TextArea fx:id="infoBox" editable="false" layoutX="14.0" layoutY="368.0" prefHeight="437.0" prefWidth="552.0" style="-fx-background-color: #F8F9FA;" />
+      <TextArea fx:id="email" editable="false" layoutX="265.0" layoutY="184.0" prefHeight="48.0" prefWidth="254.0" style="-fx-background-color: #F8F9FA;" />
+      <ImageView fx:id="createSubRedditImage1" fitHeight="48.0" fitWidth="69.0" layoutX="914.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/reddit-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="createSubRedditImage2" fitHeight="21.0" fitWidth="14.0" layoutX="948.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/icons8-add-image-24.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="createSubReddit" layoutX="969.0" layoutY="118.0" prefHeight="21.0" prefWidth="150.0" text="Create New SubReddit">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <JFXButton fx:id="editInfoButton" layoutX="501.0" layoutY="332.0" prefHeight="31.0" prefWidth="55.0" text="Edit" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="editInfoIcon" fitHeight="21.0" fitWidth="30.0" layoutX="545.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/icons8-edit-24.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXButton fx:id="editEmailButton" layoutX="518.0" layoutY="192.0" prefHeight="31.0" prefWidth="55.0" text="Edit" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="editEmailIcon" fitHeight="21.0" fitWidth="30.0" layoutX="563.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/icons8-edit-24.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXButton fx:id="editAgeButton" layoutX="334.0" layoutY="250.0" prefHeight="31.0" prefWidth="55.0" text="Edit" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="editAgeIcon" fitHeight="21.0" fitWidth="30.0" layoutX="379.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/icons8-edit-24.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXButton fx:id="logoutButton" layoutX="1051.0" layoutY="13.0" prefHeight="45.0" prefWidth="83.0" ripplerFill="BLACK" style="-fx-background-color: #ADB5BD;" text="Logout">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="signupButton" layoutX="1098.0" layoutY="13.0" prefHeight="45.0" prefWidth="83.0" ripplerFill="WHITE" style="-fx-background-color: #212529;" text="SignUp" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="loginButton" layoutX="1005.0" layoutY="13.0" prefHeight="45.0" prefWidth="83.0" ripplerFill="BLACK" style="-fx-background-color: #ADB5BD;" text="Login">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="profile" fitHeight="45.0" fitWidth="38.0" layoutX="1140.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/reddit.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #E9ECEF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label prefHeight="70.0" prefWidth="1213.0" style="-fx-background-color: #DEE2E6;" />
+      <ImageView fx:id="redditIcon" fitHeight="54.0" fitWidth="45.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_reddit_social_media_logo_2470533.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="redditLabel" layoutX="66.0" layoutY="25.0" prefHeight="21.0" prefWidth="59.0" text="Reddit">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <ImageView fx:id="searchIcon" fitHeight="60.0" fitWidth="38.0" layoutX="342.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_ic_search_48px_352091.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <TextField fx:id="serchTextField" layoutX="380.0" layoutY="18.0" prefHeight="35.0" prefWidth="404.0" promptText="Search" style="-fx-background-color: #F8F9FA;" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="507.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/icons8-reddit-200.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="380.0" layoutY="264.0" prefHeight="35.0" prefWidth="404.0" text="Login">
+         <font>
+            <Font name="Arial Bold" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameField" layoutX="380.0" layoutY="337.0" prefHeight="35.0" prefWidth="404.0" style="-fx-background-color: #F8F9FA;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="304.0" layoutY="342.0" prefHeight="35.0" prefWidth="76.0" text="Username">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwordField" layoutX="380.0" layoutY="402.0" prefHeight="35.0" prefWidth="404.0" style="-fx-background-color: #F8F9FA;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </PasswordField>
+      <Label layoutX="304.0" layoutY="407.0" prefHeight="35.0" prefWidth="76.0" text="Password">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="loginButton" layoutX="491.0" layoutY="499.0" prefHeight="45.0" prefWidth="182.0" ripplerFill="BLACK" style="-fx-background-color: #ADB5BD;" text="Login">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="62.0" layoutY="805.0" prefHeight="21.0" prefWidth="182.0" text="You don't have an account" />
+      <JFXButton fx:id="signupButton" layoutX="244.0" layoutY="800.0" ripplerFill="WHITE" style="-fx-background-color: #212529;" text="SignUp" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label fx:id="incorrectLabel" layoutX="380.0" layoutY="450.0" prefHeight="30.0" prefWidth="404.0" textFill="#d31717" />
+      <TextField fx:id="passwordShowField" layoutX="380.0" layoutY="402.0" prefHeight="35.0" prefWidth="404.0" style="-fx-background-color: #F8F9FA;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <ImageView fx:id="showPassword" fitHeight="70.0" fitWidth="38.0" layoutX="788.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_Eye_4472995.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="hidePassword" fitHeight="70.0" fitWidth="38.0" layoutX="788.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iconfinder_Hide_4473003.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

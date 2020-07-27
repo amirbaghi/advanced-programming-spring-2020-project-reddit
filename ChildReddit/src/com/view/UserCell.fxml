@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane fx:id="rootAnchorPane" prefHeight="115.0" prefWidth="500.0" style="-fx-background-color: #c4d6e7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Circle fx:id="imagePlace" fill="#c2c6c9" layoutX="59.0" layoutY="58.0" radius="53.0" stroke="#c2c6c9" strokeType="INSIDE" />
+      <Label fx:id="usernameLabel" layoutX="126.0" layoutY="14.0" prefHeight="32.0" prefWidth="124.0" text="username">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Label>
+      <Label layoutX="136.0" layoutY="65.0" text="Post" textFill="#129e1d" />
+      <Label fx:id="numberPost" layoutX="179.0" layoutY="65.0" text="Label" textFill="#129e1d" />
+      <Label layoutX="244.0" layoutY="65.0" text="UpVote" textFill="#f819c0" />
+      <Label fx:id="upVoteNumber" layoutX="304.0" layoutY="65.0" text="Label" textFill="#f819c0" />
+      <Label layoutX="364.0" layoutY="65.0" text="DownVote" textFill="#3f00ff" />
+      <Label fx:id="downVoteNumber" layoutX="443.0" layoutY="65.0" text="Label" textFill="#3f00ff" />
+   </children>
+</AnchorPane>
