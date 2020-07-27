@@ -68,3 +68,4 @@ Amir Mohammad Tavakkoli<br />
 Mohammad Hossein Allahakbari<br />
 Amir Masoud Baghi<br />
 Aref Sayareh<br />
+Special thanks to @alimahdiyar for sharing his ideas for this project with us and making this awesome!
